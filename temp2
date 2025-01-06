@@ -1,0 +1,28 @@
+pragma circom 2.0.0;
+
+template Multiplier () {
+	signal input c; 
+	signal input b; 
+	signal output out_0; 
+	out_0 <== b * c;
+	signal input a1; 
+	signal output out_1; 
+	out_1 <== a1 + out_0;
+	signal input f; 
+	signal output out_2; 
+	out_2 <== f * f;
+	signal output out_3; 
+	out_3 <== out_2 * f;
+	signal input e; 
+	signal output out_4; 
+	out_4 <== e * out_3;
+	signal output out_5; 
+	out_5 <== b + out_4;
+	signal input d; 
+	signal output out_6; 
+	out_6 <== c * d;
+	signal output out_7; 
+	out_7 <== out_2 + out_6;
+}
+
+component main = Multiplier();
